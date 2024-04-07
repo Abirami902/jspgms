@@ -1,0 +1,563 @@
+var a = 64
+var b = 30
+var c = a + b 
+let d = a - b
+let e = a * b
+let f = a ** 4
+let g = a / b
+let h = a % b
+
+
+let x = 10
+x ++
+let i = x
+let y = 20
+ y --
+ let j = y
+
+console.log("sum: " + c);
+console.log("sub: " + d);
+console.log("mul: " + e);
+console.log("pow: " + f);
+console.log("div: " + g);
+console.log("mod: " + h);
+console.log("incre: " + i);
+console.log("decre: " +j);
+
+// Arithmetic operations
+
+let t = 108
+let u = 327
+
+let v = t + u
+
+console.log("sum: " + v);
+
+// sum of two nos
+
+let radius = 25
+let diameter = 2 * radius
+let circumference = 2 * 3.14 * radius
+let area = 2 * 3.14 * radius * radius
+
+console.log("diameter: " + diameter);
+console.log("circumference: " + circumference);
+console.log("area: " + area);
+
+//  circle
+
+var p = 2000; 
+var r = 0.05; 
+var T = 2;    
+
+var interest = (p * r * T) / 100;
+
+console.log("Simple Interest: " + interest);
+
+
+
+
+// S.I. = (P × R × T)/100
+
+
+
+let n1 = 5; 
+let star = "";
+for (let i = 1; i <= n1; i++) { 
+	
+	for(let j = 1; j <= n1-i ;j++){ 
+        star += " " ;
+    }
+    for(let k = 1; k <= 2*i-1 ;k++){ 
+        star += "*" ;
+    }
+    star += "\n" ;
+}		
+	console.log(star); 
+
+    // pattern 1
+
+    let n2 = 5;
+let pattern = "";
+for (let i = 1; i <= n2; i++) {
+   for (let j = 1; j <= 5; j++) {
+      if (i == 1 || i == n2) 
+       pattern += "*";
+      else {
+         if (j == 1 || j == 5) {
+            pattern += "*";
+         } else {
+            pattern += " ";
+         }} }
+   pattern += "\n";
+}
+console.log(pattern);
+
+
+// pattern 2
+
+var mySqrt = function(x) {
+    let num = Math.sqrt(x)
+   let res = Math.floor(num)
+   return res
+};
+
+console.log(mySqrt(4));
+
+// Square root
+var plusOne = function (digits) {
+    for (let i = digits.length - 1; i >= 0; --i) {
+        ++digits[i];
+        digits[i] %= 10;
+        if (digits[i] != 0) {
+            return digits;
+        }
+    }
+    return [1, digits];
+};
+let digits = [1,2,3]
+console.log(plusOne(digits));
+
+// 1 add one to large no in array
+
+var isPalindrome = function(x) {
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+
+        let rev = 0;
+        while (x > rev) {
+            rev = rev * 10 + x % 10;
+            x /= 10;
+        }
+
+        return x == rev || x == rev / 10;
+    }
+let x = 121
+console.log(isPalindrome(x));
+
+
+// 2 palindrome number
+
+
+var singleNumber = function(nums) {
+    const n = nums.length;
+    for (let i = 0; i < n; i++) {
+      const x = nums[i]; 
+      let count = 0;
+      for (let j = 0; j < n; j++) {
+        if (nums[j] === x) {
+          count++;
+        }
+      }
+      if (count === 1) {
+        return x;
+      }
+    }
+    return -1;
+  };
+    const nums = [2,2,1];
+    console.log("The single element is:" + singleNumber(nums));
+
+    // 3 odd one 
+  
+
+var hammingWeight = function(n) {
+	let ones = 0;
+    	while(n!=0) {
+    		ones = ones + (n & 1);
+    		n = n>>>1;
+    	}
+    	return ones;
+
+
+};
+
+let   n = 00000000000000000000000000001011;
+console.log(hammingWeight(n));
+
+// // 4 no of 1 bits
+
+var strStr = function(haystack, needle) {
+    if(needle) return haystack.indexOf(needle);
+   else return -1;
+};
+
+const haystack = "sadbutsad"
+const needle = "sad"
+console.log(strStr(haystack, needle));
+
+// 5 index of first occurence string
+
+var lengthOfLastWord = function(s) {
+	let len = 0;
+
+	x = s.trim();
+
+	for (let i = 0; i < x.length; i++) {
+		if (x[i] == ' ') {
+			len = 0;
+		}
+		else {
+			len++;
+		}
+	}
+
+	return len;
+    
+};
+
+let s = "Hello World"
+console.log(lengthOfLastWord(s));
+
+//  1 last word length
+
+var majorityElement = function(nums3) {
+    let res = nums3[0];
+    let count = 1;
+    for(let i = 1; i < nums3.length; i++){
+        if(nums3[i] == res) count++;
+        else{
+            count--;
+            if(count == 0){
+                res = nums3[i];
+                count = 1;
+            }
+        }
+    }
+    return res;
+};
+
+let nums3 = [3,2,3]
+console.log(majorityElement(nums3));
+
+// 2 majority element
+
+var removeElement = function(nums, val) {
+    let count = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[count++] = nums[i];
+        }
+    }
+    return count;
+};
+
+let nums = [3,2,2,3]
+let val = 3
+
+count = removeElement(nums, val);
+let removedArray = nums.slice(0, count);
+
+console.log(removedArray);
+console.log(removeElement(nums, val));
+
+// 3 remove element
+
+var romanToInt = function(T) {
+    const romanMap = new Map();
+    romanMap.set('I', 1);
+    romanMap.set('V', 5);
+    romanMap.set('X', 10);
+    romanMap.set('L', 50);
+    romanMap.set('C', 100);
+    romanMap.set('D', 500);
+    romanMap.set('M', 1000);
+    const n = T.length;
+    let num = romanMap.get(T[n- 1]);
+    for (let i = n - 2; i >= 0; i--) {
+        if (romanMap.get(T[i]) >= romanMap.get(T[i + 1])) {
+            num += romanMap.get(T[i]);
+        } else {
+            num -= romanMap.get(T[i]);
+        }
+    }
+    return num;
+};
+
+let T = "III"
+console.log(romanToInt(T));
+
+
+// 4 roman to integer
+
+var longestCommonPrefix = function(strs) {
+    let longestCommonPrefix = "";
+    if (strs == null || strs.length == 0) {
+        return longestCommonPrefix;
+    }
+    let minimumLength = strs[0].length;
+    for (let i = 1; i < strs.length; i++) {
+        minimumLength = Math.min(minimumLength, strs[i].length);
+    }
+    for (let i = 0; i < minimumLength; i++) {
+        let current = strs[0][i];
+        for (let j = 0; j < strs.length; j++) {
+            if (strs[j][i] != current) {
+                return longestCommonPrefix;
+            }
+        }
+        longestCommonPrefix += current;
+    }
+    return longestCommonPrefix;
+};
+
+let strs = ["flower","flow","flight"]
+
+console.log(longestCommonPrefix(strs));
+
+// 5 common prefix
+
+var merge = function(nums1, m, nums2, n) {
+    let i, j, k;
+
+    for(i = m - 1, j = n - 1, k = m + n - 1; i >= 0 && j >= 0; k--){
+        if(nums1[i] >= nums2[j]){
+            nums1[k] = nums1[i--];
+        } else {
+            nums1[k] = nums2[j--];
+        }
+    }
+
+    while(i >= 0) {
+        nums1[k--] = nums1[i--];
+    }
+
+    while(j >= 0) {
+        nums1[k--] = nums2[j--];
+}
+};
+
+let nums1 = [1,2,3,0,0,0]
+let m = 3
+let nums2 = [2,5,6]
+let n = 3
+
+merge(nums1, m, nums2, n)
+
+console.log(nums1)
+
+// 6 merge array
+
+var rotate = function(nums, k) {
+    const n = nums.length;
+    k %= n;
+    const reverse = (i, j) => {
+        for (; i < j; ++i, --j) {
+            [nums[i], nums[j]] = [nums[j], nums[i]];
+        }
+    };
+    reverse(0, n - 1);
+    reverse(0, k - 1);
+    reverse(k, n - 1);
+};
+
+const nums = [1,2,3,4,5,6,7];
+let k = 3;
+rotate(nums, k);
+console.log(nums); 
+
+//Print the rotated array
+
+var maxProfit = function(prices) {
+    let ans = 0;
+    let mi = prices[0];
+    for (const v of prices) {
+        ans = Math.max(ans, v - mi);
+        mi = Math.min(mi, v);
+    }
+    return ans;
+};
+const prices = [7,1,5,3,6,4]
+const maxProfitValue = maxProfit(prices);
+console.log(maxProfitValue);
+
+//best time to buy and sell stock
+
+var canJump = function(nums) {
+    let mx = 0;
+    for (let i = 0; i < nums.length; ++i) {
+        if (mx < i) {
+            return false;
+        }
+        mx = Math.max(mx, i + nums[i]);
+    }
+    return true;
+};
+var searchInsert = function(nums, target) {
+    let left = 0;
+    let right = nums.length;
+    while (left < right) {
+        const mid = (left + right) >> 1;5
+        if (nums[mid] >= target) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+   return left;
+
+};
+let nums = [1,3,5,6]
+let target = 5
+let result = searchInsert(nums,target);
+console.log( result);
+
+// 1 search insert position
+
+
+var myPow = function(x, n) {
+    if (n === 0) {
+        return 1;
+    }
+    if (n < 0) {
+        x = 1 / x;
+        n = -n;
+    }
+    let pow = 1;
+    for (let i = 0; i < n; i++) {
+        pow = pow * x;
+    }
+    return pow.toFixed(5); 
+};
+
+let x = 2.00000;
+let n = 10;
+let result1 = myPow(x, n);
+console.log(result1);
+
+ // 2 pow(x,n)
+
+var isPalindrome = function(s) {
+    let i = 0;
+    let j = s.length - 1;
+    while (i < j) {
+        if (!isAlphanumeric(s[i])) {
+            i++;
+        } else if (!isAlphanumeric(s[j])) {
+            j--;
+        } else if (s[i].toLowerCase() !== s[j].toLowerCase()) {
+            return false;
+        } else {
+            i++;
+            j--;
+        }
+    }
+    return true;
+};
+
+function isAlphanumeric(char) {
+    return /[a-zA-Z0-9]/.test(char);
+}
+
+
+console.log(isPalindrome("A man, a plan, a canal: Panama")); 
+
+// 3 valid pallindrome
+
+var removeDuplicates = function(nums1) {
+    let count = 0;
+    for (let i = 0; i < nums1.length; i++) {
+        if (i < nums1.length - 1 && nums1[i] == nums1[i + 1]) {
+            continue;
+        }
+        nums1[count] = nums1[i];
+        count++;
+    }
+    const uniqueArray = nums1.slice(0, count);
+    return {
+        count: count,
+        uniqueArray: uniqueArray
+    };
+};
+
+let nums1 = [1, 1, 2];
+let result2 = removeDuplicates(nums1);
+console.log("Count:", result2.count);
+console.log("Array after removing duplicates:", result2.uniqueArray);
+
+// 4 remove duplicates
+
+let c1 = '#';
+
+let output = (c1 >= 'a' && c1 <= 'z') || (c1 >= 'A' && c1 <= 'Z')
+    ? c1 + " is an alphabet."
+    : c1 + " is not an alphabet.";
+
+console.log(output);
+
+// 5 check whether the character is an alphabet or not 
+
+
+ function leapyear(year) {
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+}
+
+console.log(leapyear(2016)); // Expected output: true
+console.log(leapyear(1700)); // Expected output: false
+
+
+ //  6 check if a given year is a leap year
+
+let root1, root2;
+
+let a = 1
+let b = -6
+let c = 9
+
+let discriminant = b * b - 4 * a * c;
+
+// condition for real and different roots
+if (discriminant > 0) {
+    root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+    root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+}
+
+// condition for real and equal roots
+else if (discriminant == 0) {
+    root1 = root2 = -b / (2 * a);
+
+    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+}
+
+// if roots are not real
+else {
+    let realPart = (-b / (2 * a)).toFixed(2);
+    let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+
+    console.log(
+    `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
+  );
+}
+
+// 7 program to solve quadratic equation
+
+var isHappyNumber = function(n) {
+    let rem = 0;
+    let sum = 0;
+    
+    while (n > 0) {
+    rem = n % 10;
+    sum = sum + (rem * rem);
+    n = Math.floor(n / 10);
+    }
+    return sum;
+    };
+    
+    let n = 2;
+    let result = n;
+    
+    while (result != 1 && result != 4) {
+        result = isHappyNumber(result);
+    }
+    if (result == 1)
+        console.log("Happy number: " + n);
+    else if (result == 4)
+        console.log("Not a happy number: " + n);
+    
+    
+//Happy no
+    
+
