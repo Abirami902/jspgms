@@ -1,6 +1,4 @@
 
-
-
 let arr = ["cat", "car", "fear", "center"];
 let s = "ca";
 let strings = "";
@@ -11,7 +9,7 @@ for (let i of arr) {
     count += 1;
 }
 
-console.log("length of array"+ count);
+console.log("length of array :"+ count);
 
 let length = 0;
 
@@ -24,7 +22,7 @@ console.log("Length of prefix : " + length);
 for (let i = 0; i < count; i++) {
 let match = true;
 
-for (let j = 0; j < s.length; j++) {
+for (let j = 0; j < length; j++) {
 if (s[j] !== arr[i][j]) {
 match = false;
 break;
