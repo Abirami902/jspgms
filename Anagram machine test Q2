@@ -1,0 +1,29 @@
+
+let s1 ="ear";
+let s2 ="are";
+
+let length1 = 0;
+
+for (let i = 0; s1[i] !== undefined; i++) {
+    length1++;
+}
+
+console.log("Length of string1 : " + length1);
+
+let length2 = 0;
+
+for (let i = 0; s2[i] !== undefined; i++) {
+    length2++;
+}
+
+console.log("Length of string2 : " + length2);
+
+
+
+if(length1 === length2){
+    console.log("Anagram strings");
+}
+else{
+    console.log("Not Anagram strings");
+    
+}
