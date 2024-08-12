@@ -1,0 +1,41 @@
+
+
+
+let arr = ["cat", "car", "fear", "center"];
+let s = "ca";
+let strings = "";
+
+let count = 0;
+
+for (let i of arr) {
+    count += 1;
+}
+
+console.log("length of array"+ count);
+
+let length = 0;
+
+for (let i = 0; s[i] !== undefined; i++) {
+    length++;
+}
+
+console.log("Length of prefix : " + length);
+
+for (let i = 0; i < count; i++) {
+let match = true;
+
+for (let j = 0; j < s.length; j++) {
+if (s[j] !== arr[i][j]) {
+match = false;
+break;
+}
+}
+if (match) {
+strings += arr[i] + " ";
+}
+}
+if (strings) {
+    console.log("Matching strings: " + strings);
+} else {
+    console.log("No match");
+}
